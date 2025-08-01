@@ -7,11 +7,11 @@ import org.springframework.web.client.support.RestClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
 @Configuration
-public class CourierAPIClientConfig {
+public class CourierApiClientConfig {
 
     @Bean
     public CourierApiClient courierApiClient(RestClient.Builder builder) {
-        RestClient restClient = builder.baseUrl("http://localhost:80801/api/v1/couriers").build();
+        RestClient restClient = builder.baseUrl("http://localhost:8081").build();
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
         HttpServiceProxyFactory proxyFactory = HttpServiceProxyFactory.builderFor(adapter).build();
 
